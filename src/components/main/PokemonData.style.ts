@@ -5,7 +5,7 @@ export const Box = styled.div`
   flex-direction: column;
   border-radius: 1rem;
   width: 32rem;
-  height: 23.8rem;
+  height: 25.5rem;
   border: none;
   padding: 0.4rem;
   margin: 3rem 0;
@@ -35,20 +35,13 @@ export const Span = styled.span`
 export const TypeBox = styled.div`
   display: flex;
   border: none;
+  margin-top: 1rem;
   :first-child:nth-last-child(1) {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 10px;
     width: 100%;
-    padding: 1.1rem;
-  }
-  div:first-child:nth-last-child(2),
-  div:first-child:nth-last-child(2) ~ div {
-    margin : 0 0.4rem 1rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44%;
+    padding: 1.1rem 2px;
   }
 `;
