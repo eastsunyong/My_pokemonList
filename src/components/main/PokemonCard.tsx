@@ -8,6 +8,7 @@ const Containal = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 4rem;
 `
 const PokemonCard = () => {
   const { pokemonList, setPokemonList} = useGetPokemonlist();
