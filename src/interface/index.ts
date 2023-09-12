@@ -21,3 +21,7 @@ export interface IPokemonNameBox {
   language : IPokemonList;
   name : string
 }
+
+export interface IApi {
+  pageParam : number
+}
