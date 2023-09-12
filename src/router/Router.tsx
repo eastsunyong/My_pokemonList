@@ -1,14 +1,14 @@
 import React from 'react'
 import { Routes, Route, Navigate } from "react-router-dom";
-import Main from 'page/Main';
-import Detail from 'page/Detail';
+import { Main, Detail, Type } from 'page';
 
 const Router = () => {
   return (
     <>
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/detail' element={<Detail />} />
+        <Route path='/pokemon/:pokemonId' element={<Detail />} />
+        <Route path='/type/:pokemonType' element={<Type />} />
       </Routes>
     </>
   )
