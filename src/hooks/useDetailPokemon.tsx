@@ -1,10 +1,7 @@
 import { useQuery } from "react-query";
 import { getPokemonInfoWithId, getPokemonListWithSpecies } from "client/api";
-import { IPokemonNameBox } from "interface";
 
-export const useDetailPokemon = (params: string | undefined) => {
-    const lang = { lang: "ko" }
-    
+export const useDetailPokemon = (params: string | undefined) => {   
     const { data: pokemonInfo } = useQuery(
         ["pokemons", params],
         () => getPokemonInfoWithId(params),
@@ -15,11 +12,5 @@ export const useDetailPokemon = (params: string | undefined) => {
         () => getPokemonListWithSpecies(params),
         { enabled: !!params }
     );
-    //포켓몬 이름 filter 이용해서 구하기
-    let koreaName: IPokemonNameBox[] = [];
-    koreaName = pokemonSpeciesInfo?.names.filter(
-        (koreaName: IPokemonNameBox) => koreaName.language.name === lang.lang
-    )
-
-    return { pokemonInfo, pokemonSpeciesInfo, koreaName }
+    return { pokemonInfo, pokemonSpeciesInfo }
 }
