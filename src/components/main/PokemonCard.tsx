@@ -1,29 +1,35 @@
-import { useInView } from 'react-intersection-observer';
 import PokemonData from './PokemonData';
 import { IPokemonList } from 'interface';
 import styled from 'styled-components';
-import { useInfinite } from 'hooks/useInfinite';
+import Loading from './status/Loading';
+import Error from './status/Error';
 
 const Containal = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 4rem;
+  padding: 0 2rem;
 `
-const PokemonCard = () => {
-  const [ref, useInview] = useInView();
-  const { pokemonListAll, pokemonListAllStatus} = useInfinite(useInview);
-  
+interface IPropsData {
+  pokemons: IPokemonList[];
+  status: "idle" | "error" | "loading" | "success";
+}
+
+const PokemonCard = (pokemonList: IPropsData) => {
   return (
-    <Containal>
-      {
-        pokemonListAll?.pages[0]?.results.map((pokemon : IPokemonList) => (
-          <PokemonData key={pokemon.url} pokemonName={pokemon.name} />
-        ))
-      }
-      <div ref={ref}/>
-    </Containal>
+    <>
+      <Containal>
+        {pokemonList.status === "success" && <>
+          {pokemonList?.pokemons.map((pokemon: IPokemonList) => (
+            <PokemonData key={pokemon.url} pokemonName={pokemon.name} />
+          ))}
+        </>}
+      </Containal>
+
+      {pokemonList.status === "loading" && <Loading />}
+      {pokemonList.status === "error" && <Error />}
+    </>
   )
 }
 
