@@ -5,8 +5,6 @@ import { getPokemonInfo, getPokemonListWithSpecies } from 'client/api'
 
 export const useAllPokemon = ({ pokemonName }: IPokemonName) => {
   const [lang, setLang] = useState({lang :  "ko"})
-  console.log(pokemonName);
-  
   
   //포켓몬 세부정보 api
   const { data: pokemonInfo } = useQuery(
