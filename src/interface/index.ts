@@ -18,10 +18,20 @@ export interface IPokemonType {
 }
 
 export interface IPokemonNameBox {
-  language : IPokemonList;
-  name : string
+  language: IPokemonList;
+  name: string;
 }
 
 export interface IApi {
-  pageParam : number
+  pageParam: number;
+}
+
+export interface IPokemonLanguage {
+  language: IPokemonList;
+}
+
+export interface IFlavorTextType {
+  flavor_text: string | undefined;
+  language: IPokemonList;
+  version: IPokemonList;
 }
