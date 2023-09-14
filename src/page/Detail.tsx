@@ -13,6 +13,8 @@ const Detail = () => {
   const { pokemonInfo, pokemonSpeciesInfo } = useDetailPokemon(id);
   let krName: IPokemonNameBox[] = useLanguage(pokemonSpeciesInfo?.names)
   let FlavorText: IFlavorTextType[] = useLanguage(pokemonSpeciesInfo?.flavor_text_entries)
+
+  console.log(pokemonSpeciesInfo?.names);
   
   return (
     <>
@@ -28,7 +30,7 @@ const Detail = () => {
               height={130}
             />
             <p># {pokemonInfo?.id}</p>
-            <p>{krName && krName[0]?.name}</p>
+            <p>{pokemonSpeciesInfo?.names === undefined ? '이름 정보를 불러올수 없습니다' : (krName && krName[0]?.name)}</p>
           </S.HeadBox>
           <S.BodyBox>
             <div>
