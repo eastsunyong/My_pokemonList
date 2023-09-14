@@ -1,17 +1,21 @@
 import { useDetailPokemon } from 'hooks/useDetailPokemon'
 import { useParams } from 'react-router-dom'
-import { IPokemonType, IFlavorTextType } from 'interface'
-import PokemonType from 'components/main/PokemonType'
+import { IPokemonType, IFlavorTextType, IPokemonNameBox } from 'interface'
+import PokemonType from 'components/common/PokemonType'
 import * as S from './Detail.style'
-import Header from 'components/main/Header'
+import Header from 'components/common/Header'
 import PokemonInfo from 'components/detail/PokemonInfo'
 import { useLanguage } from 'hooks/useLanguage'
 import PokemonShape from 'components/detail/PokemonShape'
 
 const Detail = () => {
   const { id } = useParams();
-  const { pokemonInfo, pokemonSpeciesInfo, koreaName } = useDetailPokemon(id);
-  const FlavorText: IFlavorTextType[] = useLanguage(pokemonSpeciesInfo?.flavor_text_entries)
+  const { pokemonInfo, pokemonSpeciesInfo } = useDetailPokemon(id);
+  let krName: IPokemonNameBox[] = useLanguage(pokemonSpeciesInfo?.names)
+  let FlavorText: IFlavorTextType[] = useLanguage(pokemonSpeciesInfo?.flavor_text_entries)
+
+  console.log(pokemonSpeciesInfo?.names);
+  
   return (
     <>
       <Header />
@@ -26,7 +30,7 @@ const Detail = () => {
               height={130}
             />
             <p># {pokemonInfo?.id}</p>
-            <p>{koreaName && koreaName[0]?.name}</p>
+            <p>{pokemonSpeciesInfo?.names === undefined ? '이름 정보를 불러올수 없습니다' : (krName && krName[0]?.name)}</p>
           </S.HeadBox>
           <S.BodyBox>
             <div>
@@ -34,7 +38,9 @@ const Detail = () => {
                 return <PokemonType key={index} type={type} />
               })}
             </div>
+            <div>
             <h3>{pokemonSpeciesInfo?.genera[1]?.genus}</h3>
+            </div>
             <p>{FlavorText && FlavorText[0]?.flavor_text}</p>
             <PokemonInfo height={pokemonInfo?.height} weight={pokemonInfo?.weight} />
           </S.BodyBox>

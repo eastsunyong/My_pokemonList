@@ -35,3 +35,8 @@ export interface IFlavorTextType {
   language: IPokemonList;
   version: IPokemonList;
 }
+
+export interface IPokemonMap {
+  pokemon: IPokemonList;
+  slot: number;
+}

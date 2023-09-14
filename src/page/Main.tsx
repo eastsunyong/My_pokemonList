@@ -1,4 +1,4 @@
-import Header from 'components/main/Header'
+import Header from 'components/common/Header'
 import Input from 'components/main/Input'
 import PokemonCard from 'components/main/PokemonCard'
 import * as S from "./Main.style"

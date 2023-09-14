@@ -1,12 +1,14 @@
-import { IPokemonName, IPokemonType } from 'interface';
+import { IPokemonName, IPokemonType, IPokemonNameBox } from 'interface';
 import { useAllPokemon } from 'hooks/useAllPokemon';
-import PokemonType from './PokemonType';
+import PokemonType from 'components/common/PokemonType';
 import * as S from "./PokemonData.style"
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from 'hooks/useLanguage';
 
 const PokemonData = ({ pokemonName }: IPokemonName) => {
-  const { pokemonInfo, koreaName } = useAllPokemon({ pokemonName })
   const navigate = useNavigate();
+  const { pokemonInfo, pokemonSpeciesInfo } = useAllPokemon(pokemonName)
+  const krName: IPokemonNameBox[] = useLanguage(pokemonSpeciesInfo?.names)
   
   return (
     <S.Box onClick={()=> {navigate(`/pokemon/${pokemonInfo?.id}`)}}>
@@ -15,7 +17,7 @@ const PokemonData = ({ pokemonName }: IPokemonName) => {
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
           alt="포켓볼"
         />
-        <p>{koreaName && koreaName[0].name}</p>
+        <p>{krName && krName[0].name}</p>
       </S.HeadBox>
       <S.Span># {pokemonInfo?.id}</S.Span>
 
