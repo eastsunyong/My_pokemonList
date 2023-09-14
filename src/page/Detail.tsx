@@ -1,9 +1,9 @@
 import { useDetailPokemon } from 'hooks/useDetailPokemon'
 import { useParams } from 'react-router-dom'
 import { IPokemonType, IFlavorTextType, IPokemonNameBox } from 'interface'
-import PokemonType from 'components/main/PokemonType'
+import PokemonType from 'components/common/PokemonType'
 import * as S from './Detail.style'
-import Header from 'components/main/Header'
+import Header from 'components/common/Header'
 import PokemonInfo from 'components/detail/PokemonInfo'
 import { useLanguage } from 'hooks/useLanguage'
 import PokemonShape from 'components/detail/PokemonShape'
@@ -36,7 +36,9 @@ const Detail = () => {
                 return <PokemonType key={index} type={type} />
               })}
             </div>
+            <div>
             <h3>{pokemonSpeciesInfo?.genera[1]?.genus}</h3>
+            </div>
             <p>{FlavorText && FlavorText[0]?.flavor_text}</p>
             <PokemonInfo height={pokemonInfo?.height} weight={pokemonInfo?.weight} />
           </S.BodyBox>

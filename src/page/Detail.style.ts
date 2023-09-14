@@ -48,14 +48,11 @@ export const BodyBox = styled.div`
   :first-child {
     display: flex;
   }
+  :nth-child(3) {
+    padding: 0 2rem;
+  }
   h3 {
     font-size: 2rem;
     margin: 2rem 0;
   }
-`;
-export const Test = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 `;
