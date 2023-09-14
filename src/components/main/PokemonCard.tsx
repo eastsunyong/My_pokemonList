@@ -1,8 +1,8 @@
 import PokemonData from './PokemonData';
 import { IPokemonList } from 'interface';
 import styled from 'styled-components';
-import Loading from './status/Loading';
-import Error from './status/Error';
+import Loading from 'components/common/Loading';
+import Error from 'components/common/Error';
 
 const Containal = styled.div`
   display: flex;

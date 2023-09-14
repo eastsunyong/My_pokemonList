@@ -1,5 +1,5 @@
 import React from "react";
-import PokemonType from "./PokemonType";
+import PokemonType from "components/common/PokemonType";
 import { IPokemonType } from "interface";
 import styled from "styled-components";
 

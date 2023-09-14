@@ -1,6 +1,6 @@
 import { IPokemonName, IPokemonType, IPokemonNameBox } from 'interface';
 import { useAllPokemon } from 'hooks/useAllPokemon';
-import PokemonType from './PokemonType';
+import PokemonType from 'components/common/PokemonType';
 import * as S from "./PokemonData.style"
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from 'hooks/useLanguage';
