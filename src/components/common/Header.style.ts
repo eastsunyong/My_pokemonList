@@ -16,6 +16,7 @@ export const Header = styled.header`
 export const Title = styled.h2`
     padding-left: 3rem;
     font-family: "Galmuri14";
+    cursor: pointer;
 `
 
 export const Languge = styled.p`
