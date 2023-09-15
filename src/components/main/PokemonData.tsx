@@ -8,7 +8,7 @@ import { useLanguage } from 'hooks/useLanguage';
 const PokemonData = ({ pokemonName }: IPokemonName) => {
   const navigate = useNavigate();
   const { pokemonInfo, pokemonSpeciesInfo } = useAllPokemon(pokemonName)
-  const krName: IPokemonNameBox[] = useLanguage(pokemonSpeciesInfo?.names)
+  const {language} = useLanguage(pokemonSpeciesInfo?.names, undefined)
   
   return (
     <S.Box onClick={()=> {navigate(`/pokemon/${pokemonInfo?.id}`)}}>
@@ -17,7 +17,7 @@ const PokemonData = ({ pokemonName }: IPokemonName) => {
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
           alt="포켓볼"
         />
-        <p>{krName && krName[0].name}</p>
+        <p>{language && language[0].name}</p>
       </S.HeadBox>
       <S.Span># {pokemonInfo?.id}</S.Span>
 

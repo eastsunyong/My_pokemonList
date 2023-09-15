@@ -1,11 +1,16 @@
-import { IPokemonLanguage } from "interface";
+import { useState } from "react";
+import { IPokemonLanguage, IPokemonNameBox, IPokemonFlavorText } from "interface";
 
-export const useLanguage = (array: []) => {
-    const lang = { lang: "ko" }
+export const useLanguage = (langArray: [], flavorArray: [] | undefined) => {
+    const [lang, setLang] = useState({ lang: "ko" });
 
-    let koreaLanguage: any[] = [];
-    koreaLanguage = array?.filter(
-        (koreaName: IPokemonLanguage) => koreaName.language.name === lang.lang
+    let language: IPokemonNameBox[] = [];
+    language = langArray?.filter(
+        (countryLang: IPokemonLanguage) => countryLang.language.name === lang.lang
     )
-    return koreaLanguage
+    let flavorText: IPokemonFlavorText[] | undefined = [];
+    flavorText = flavorArray?.filter(
+        (featureText: IPokemonLanguage) => featureText.language.name === lang.lang
+    )
+    return {language, flavorText, lang, setLang}
 }

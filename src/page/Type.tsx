@@ -11,12 +11,11 @@ import * as S from './Type.style'
 const Type = () => {
   const { pokemonType } = useParams();
   const { typePokemonList } = useType(pokemonType);
-  let krName: IPokemonNameBox[] = useLanguage(typePokemonList?.names)
-
+  const {language} = useLanguage(typePokemonList?.names, undefined)
   return (
     <S.Wrap>
       <Header />
-      <TypeHeader img={pokemonType} krName={krName && krName[0]?.name} type={pokemonType}/>
+      <TypeHeader img={pokemonType} krName={language && language[0]?.name} type={pokemonType}/>
       <S.Containal>
         {typePokemonList?.pokemon?.map((pokemon: IPokemonMap) => (
           <PokemonData key={pokemon.pokemon.url} pokemonName={pokemon.pokemon.name} />

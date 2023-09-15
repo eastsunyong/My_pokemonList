@@ -2,7 +2,7 @@ import * as S from './Detail.style'
 import { useParams } from 'react-router-dom'
 import { useDetailPokemon } from 'hooks/useDetailPokemon'
 import { useLanguage } from 'hooks/useLanguage'
-import { IPokemonType, IFlavorTextType, IPokemonNameBox } from 'interface'
+import { IPokemonType } from 'interface'
 import Header from 'components/common/Header'
 import PokemonType from 'components/common/PokemonType'
 import PokemonInfo from 'components/detail/PokemonInfo'
@@ -12,8 +12,7 @@ import Loading from 'components/common/Loading'
 const Detail = () => {
   const { id } = useParams();
   const { pokemonInfo, pokemonSpeciesInfo, isLoading } = useDetailPokemon(id);
-  let krName: IPokemonNameBox[] = useLanguage(pokemonSpeciesInfo?.names)
-  let FlavorText: IFlavorTextType[] = useLanguage(pokemonSpeciesInfo?.flavor_text_entries)
+  const {language, flavorText} = useLanguage(pokemonSpeciesInfo?.names, pokemonSpeciesInfo?.flavor_text_entries);
   return (
     <>
       <Header />
@@ -29,7 +28,7 @@ const Detail = () => {
                 height={130}
               />
               <p># {pokemonInfo?.id}</p>
-              <p>{pokemonSpeciesInfo?.names === undefined ? '이름 정보를 불러올수 없습니다' : (krName && krName[0]?.name)}</p>
+              <p>{pokemonSpeciesInfo?.names === undefined ? '이름 정보를 불러올수 없습니다' : (language && language[0]?.name)}</p>
             </S.HeadBox>
             <S.BodyBox>
               <div>
@@ -40,7 +39,7 @@ const Detail = () => {
               <div>
                 <h3>{pokemonSpeciesInfo?.genera[1]?.genus}</h3>
               </div>
-              <p>{FlavorText && FlavorText[0]?.flavor_text}</p>
+              <p>{flavorText && flavorText[0]?.flavor_text}</p>
               <PokemonInfo height={pokemonInfo?.height} weight={pokemonInfo?.weight} />
             </S.BodyBox>
             <PokemonShape PokemonShape={pokemonInfo?.sprites} />
