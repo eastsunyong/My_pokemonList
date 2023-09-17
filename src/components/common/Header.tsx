@@ -1,11 +1,36 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as S from "./Header.style"
+import { LanguageContext } from 'App'
+import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+interface IPropsData {
+  address: string;
+}
 
-const Header = () => {
+const Header = (address : IPropsData) => {
+  const navigate = useNavigate();
+  const { language, setLanguage } = useContext(LanguageContext);
+  const Nav = () => {
+    if (address.address === 'main') {
+      navigate('/')
+    } else {
+      navigate(-1)
+    }
+  } 
+
   return (
     <S.Header>
-      <S.Title>나만의 포켓몬 도감</S.Title>
-      {/* <S.Languge>한국어/영어 언어 선택 기능시 추가 예정</S.Languge> */}
+      <S.Title onClick={Nav}>나만의 포켓몬 도감</S.Title>
+      <S.Box langColor={language}>
+        <LazyLoadImage
+          src='/images/global.jpg'
+          alt='글로벌'
+          width={20}
+          height={20}
+        />
+        <p onClick={()=> setLanguage('ko')}>한국어</p>
+        <p onClick={() => setLanguage('en')}>EN</p>
+      </S.Box>
     </S.Header>
   )
 }

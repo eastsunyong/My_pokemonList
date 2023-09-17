@@ -1,5 +1,4 @@
 import Header from 'components/common/Header'
-import Input from 'components/main/Input'
 import PokemonCard from 'components/main/PokemonCard'
 import * as S from "./Main.style"
 import { useInfinite } from 'hooks/useInfinite'
@@ -11,8 +10,7 @@ const Main = () => {
   const { pokemonListAll, pokemonListAllStatus } = useInfinite(useInview);
   return (
     <S.Wrap>
-      <Header />
-      {/* <Input /> */}
+      <Header address={'main'}/>
       <Label />
       {pokemonListAll?.pages.map((group, index) => (
         <PokemonCard key={index} pokemons={group.results} status={pokemonListAllStatus} />

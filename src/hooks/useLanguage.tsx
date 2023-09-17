@@ -1,11 +1,17 @@
-import { IPokemonLanguage } from "interface";
+import { LanguageContext } from 'App'
+import { useContext } from "react";
+import { IPokemonLanguage, IPokemonNameBox, IPokemonFlavorText } from "interface";
 
-export const useLanguage = (array: []) => {
-    const lang = { lang: "ko" }
+export const useLanguage = (langArray: [], flavorArray: [] | undefined) => {
+    const {language, setLanguage} = useContext(LanguageContext);
 
-    let koreaLanguage: any[] = [];
-    koreaLanguage = array?.filter(
-        (koreaName: IPokemonLanguage) => koreaName.language.name === lang.lang
+    let bilingual: IPokemonNameBox[] = [];
+    bilingual = langArray?.filter(
+        (countryLang: IPokemonLanguage) => countryLang.language.name === language
     )
-    return koreaLanguage
+    let flavorText: IPokemonFlavorText[] | undefined = [];
+    flavorText = flavorArray?.filter(
+        (featureText: IPokemonLanguage) => featureText.language.name === language
+    )
+    return {bilingual, flavorText, language, setLanguage}
 }

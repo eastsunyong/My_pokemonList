@@ -5,7 +5,7 @@ import { IApi } from "interface";
 export const getPokemonList = async ({ pageParam = 0 }: IApi) => {
   return await client
     .get("/pokemon", {
-      params: { limit: 20, offset: pageParam },
+      params: { limit: 34, offset: pageParam },
     })
     .then((res) => res.data);
 };

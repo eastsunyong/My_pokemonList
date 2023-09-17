@@ -11,7 +11,7 @@ export const Wrap = styled.div`
 
 export const NameBox = styled.div`
     background-color: #E9ECEE;
-    font-family: "GalmuriMono11";
+    font-family: "Galmuri14";
     padding: 0.72rem 4rem;
     font-size: 1.2rem;
     font-family: 600;

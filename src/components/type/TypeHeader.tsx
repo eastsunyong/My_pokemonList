@@ -1,5 +1,6 @@
 import React from 'react'
 import * as S from './TypeHeader.style'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface PropsData {
   img: string | undefined;
@@ -11,7 +12,7 @@ const TypeHeader = (typeData: PropsData) => {
   return (
     <S.Wrap>
       <S.HeadBox bgColor={typeData?.type}>
-        <img
+        <LazyLoadImage
           src={`/images/pokemon-type-images/${typeData.type}.svg`}
           alt={typeData.type}
         />

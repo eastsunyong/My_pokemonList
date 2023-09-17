@@ -40,3 +40,12 @@ export interface IPokemonMap {
   pokemon: IPokemonList;
   slot: number;
 }
+
+export interface IPokemonFlavorText {
+  flavor_text: string;
+  language: IPokemonList;
+  version: {
+    name: string;
+    url: string;
+  }
+}
