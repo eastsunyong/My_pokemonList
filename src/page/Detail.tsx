@@ -12,10 +12,10 @@ import Loading from 'components/common/Loading'
 const Detail = () => {
   const { id } = useParams();
   const { pokemonInfo, pokemonSpeciesInfo, isLoading } = useDetailPokemon(id);
-  const {language, flavorText} = useLanguage(pokemonSpeciesInfo?.names, pokemonSpeciesInfo?.flavor_text_entries);
+  const { bilingual, flavorText, language } = useLanguage(pokemonSpeciesInfo?.names, pokemonSpeciesInfo?.flavor_text_entries);
   return (
     <>
-      <Header />
+      <Header address={'detail'}/>
       <S.Wrap>
         <S.Box>
           {isLoading ? <Loading /> : <>
@@ -28,19 +28,19 @@ const Detail = () => {
                 height={130}
               />
               <p># {pokemonInfo?.id}</p>
-              <p>{pokemonSpeciesInfo?.names === undefined ? '이름 정보를 불러올수 없습니다' : (language && language[0]?.name)}</p>
+              <p>{pokemonSpeciesInfo?.names === undefined ? '이름 정보를 불러올수 없습니다' : (bilingual && bilingual[0]?.name)}</p>
             </S.HeadBox>
             <S.BodyBox>
               <div>
                 {pokemonInfo?.types.map((type: IPokemonType, index: number) => {
-                  return <PokemonType key={index} type={type} />
+                  return <PokemonType key={index} type={type}/>
                 })}
               </div>
               <div>
-                <h3>{pokemonSpeciesInfo?.genera[1]?.genus}</h3>
+                <h3>{language === 'ko' ? pokemonSpeciesInfo?.genera[1]?.genus : pokemonSpeciesInfo?.genera[7]?.genus}</h3>
               </div>
               <p>{flavorText && flavorText[0]?.flavor_text}</p>
-              <PokemonInfo height={pokemonInfo?.height} weight={pokemonInfo?.weight} />
+              <PokemonInfo height={pokemonInfo?.height} weight={pokemonInfo?.weight} language={language} />
             </S.BodyBox>
             <PokemonShape PokemonShape={pokemonInfo?.sprites} />
           </>

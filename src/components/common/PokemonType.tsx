@@ -1,14 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { IPokemonType } from 'interface'
 import { ConvertedText } from 'hooks/useTypeChange'
 import { useNavigate } from 'react-router-dom'
-import * as S from './PokemonType.style'
+import { LanguageContext } from 'App'
 
+import * as S from './PokemonType.style'
 interface IPropsData {
-  type: IPokemonType
+  type: IPokemonType;
 }
 const PokemonType = ({ type }: IPropsData) => {
   const navigate = useNavigate();
+  const {language} = useContext(LanguageContext)
   return (
     <S.Button bgColor={type?.type?.name} key={type?.type?.name}
       onClick={() => { navigate(`/type/${type?.type?.name}`) }}>
@@ -20,7 +22,7 @@ const PokemonType = ({ type }: IPropsData) => {
             alt={type?.type?.name}
           />
         )}
-      <S.Span>{ConvertedText[type?.type?.name]}</S.Span>
+      <S.Span>{language === 'ko' ? ConvertedText[type?.type?.name] : type?.type?.name}</S.Span>
     </S.Button>
   );
 }
