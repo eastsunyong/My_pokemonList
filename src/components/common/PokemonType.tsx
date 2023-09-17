@@ -20,6 +20,8 @@ const PokemonType = ({ type }: IPropsData) => {
             key={type?.type?.name}
             src={`/images/pokemon-type-images/${type?.type?.name}.svg`}
             alt={type?.type?.name}
+            width={20}
+            height={20}
           />
         )}
       <S.Span>{language === 'ko' ? ConvertedText[type?.type?.name] : type?.type?.name}</S.Span>
