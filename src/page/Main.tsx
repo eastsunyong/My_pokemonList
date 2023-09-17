@@ -10,7 +10,7 @@ const Main = () => {
   const { pokemonListAll, pokemonListAllStatus } = useInfinite(useInview);
   return (
     <S.Wrap>
-      <Header />
+      <Header address={'main'}/>
       <Label />
       {pokemonListAll?.pages.map((group, index) => (
         <PokemonCard key={index} pokemons={group.results} status={pokemonListAllStatus} />
