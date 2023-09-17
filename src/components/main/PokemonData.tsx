@@ -4,6 +4,7 @@ import PokemonType from 'components/common/PokemonType';
 import * as S from "./PokemonData.style"
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from 'hooks/useLanguage';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const PokemonData = ({ pokemonName }: IPokemonName) => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const PokemonData = ({ pokemonName }: IPokemonName) => {
   return (
     <S.Box onClick={() => { navigate(`/pokemon/${pokemonInfo?.id}`) }}>
       <S.HeadBox>
-        <img
+        <LazyLoadImage
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
           alt="포켓볼"
           width={32}
@@ -24,7 +25,10 @@ const PokemonData = ({ pokemonName }: IPokemonName) => {
       <S.Span># {pokemonInfo?.id}</S.Span>
 
       <S.BodyBox>
-        <img
+        <LazyLoadImage
+          loading='lazy'
+          effect='blur'
+          placeholderSrc='/images/NaNImg.jpg'
           key={pokemonInfo?.id}
           src={
             pokemonInfo?.sprites?.versions?.["generation-v"]?.["black-white"]

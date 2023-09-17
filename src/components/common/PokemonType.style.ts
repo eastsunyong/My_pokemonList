@@ -18,10 +18,6 @@ export const Button = styled.button<IPropsButton>`
     font-family: "Galmuri14";
 `
 
-export const Img = styled.img`
-    width: 20px;
-`
-
 export const Span = styled.span`
     color: white;
     font-size: 1rem;

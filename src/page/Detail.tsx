@@ -8,6 +8,7 @@ import PokemonType from 'components/common/PokemonType'
 import PokemonInfo from 'components/detail/PokemonInfo'
 import PokemonShape from 'components/detail/PokemonShape'
 import Loading from 'components/common/Loading'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const Detail = () => {
   const { id } = useParams();
@@ -20,10 +21,11 @@ const Detail = () => {
         <S.Box>
           {isLoading ? <Loading /> : <>
             <S.HeadBox>
-              <img
+              <LazyLoadImage
                 src={
                   pokemonInfo?.sprites?.versions?.["generation-v"]?.["black-white"]
                     ?.animated?.front_default || pokemonInfo?.sprites?.front_default}
+                alt='포켓몬 사진'
                 width={110}
                 height={130}
               />

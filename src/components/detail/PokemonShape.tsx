@@ -1,5 +1,6 @@
 import React from 'react'
 import * as S from './PokemonShape.style'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const PokemonShape = ({ PokemonShape }: any) => {
     const pokemonImg: string[] = [
@@ -14,7 +15,7 @@ const PokemonShape = ({ PokemonShape }: any) => {
                 (imgtype, imgIndex) =>
                     PokemonShape?.[imgtype] && (
                         <div key={imgIndex}>
-                            <img
+                            <LazyLoadImage
                                 src={PokemonShape?.[imgtype]}
                             />
                         </div>

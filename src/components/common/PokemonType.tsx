@@ -3,6 +3,7 @@ import { IPokemonType } from 'interface'
 import { ConvertedText } from 'hooks/useTypeChange'
 import { useNavigate } from 'react-router-dom'
 import { LanguageContext } from 'App'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import * as S from './PokemonType.style'
 interface IPropsData {
@@ -16,7 +17,7 @@ const PokemonType = ({ type }: IPropsData) => {
       onClick={() => { navigate(`/type/${type?.type?.name}`) }}>
       {type?.type?.name !== "unknown" &&
         type?.type?.name !== "shadow" && (
-          <S.Img
+          <LazyLoadImage
             key={type?.type?.name}
             src={`/images/pokemon-type-images/${type?.type?.name}.svg`}
             alt={type?.type?.name}

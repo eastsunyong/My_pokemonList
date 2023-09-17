@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import * as S from "./Header.style"
 import { LanguageContext } from 'App'
 import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 interface IPropsData {
   address: string;
 }
@@ -21,8 +22,9 @@ const Header = (address : IPropsData) => {
     <S.Header>
       <S.Title onClick={Nav}>나만의 포켓몬 도감</S.Title>
       <S.Box langColor={language}>
-        <img 
-          src='/images/global.png'
+        <LazyLoadImage
+          src='/images/global.jpg'
+          alt='글로벌'
           width={20}
           height={20}
         />
