@@ -16,6 +16,8 @@ const PokemonData = ({ pokemonName }: IPokemonName) => {
         <img
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
           alt="포켓볼"
+          width={32}
+          height={32}
         />
         <p>{bilingual && bilingual[0].name}</p>
       </S.HeadBox>
