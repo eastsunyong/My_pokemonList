@@ -19,7 +19,7 @@ const Detail = () => {
       <Header address={'detail'}/>
       <S.Wrap>
         <S.Box>
-          {isLoading ? <Loading /> : <>
+          {isLoading ? <Loading language={language}/> : <>
             <S.HeadBox>
               <LazyLoadImage
                 src={

@@ -10,11 +10,14 @@ const Wrap = styled.div`
     font-family: "Galmuri14";
     margin-top: 7rem;
 `
+interface IPropsData {
+  language: string;
+}
 
-const Loading = () => {
+const Loading = (language: IPropsData) => {
   return (
     <Wrap>
-      <p>불러오는 중 ... </p>
+      <p>{language.language === 'ko' ? '불러오는 중 ...' : 'loading ...' }</p>
     </Wrap>
   )
 }
