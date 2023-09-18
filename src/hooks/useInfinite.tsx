@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useInfiniteQuery } from 'react-query';
 import { getPokemonList } from 'client/api';
 
