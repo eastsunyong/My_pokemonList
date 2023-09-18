@@ -12,29 +12,30 @@ const Containal = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 0 2rem;
-`
+`;
 interface IPropsData {
   pokemons: IPokemonList[];
-  status: "idle" | "error" | "loading" | "success";
+  status: 'idle' | 'error' | 'loading' | 'success';
 }
 
 const PokemonCard = (pokemonList: IPropsData) => {
-  const { language } = useContext(LanguageContext)
+  const { language } = useContext(LanguageContext);
   return (
     <>
       <Containal>
-        {pokemonList.status === "loading" && <Loading language={language} />}
-        {pokemonList.status === "error" && <Error language={language} />}
+        {pokemonList.status === 'loading' && <Loading language={language} />}
+        {pokemonList.status === 'error' && <Error language={language} />}
 
-        {pokemonList.status === "success" && <>
-          {pokemonList?.pokemons.map((pokemon: IPokemonList) => (
-            <PokemonData key={pokemon.url} pokemonName={pokemon.name} />
-          ))}
-        </>}
+        {pokemonList.status === 'success' && (
+          <>
+            {pokemonList?.pokemons.map((pokemon: IPokemonList) => (
+              <PokemonData key={pokemon.url} pokemonName={pokemon.name} />
+            ))}
+          </>
+        )}
       </Containal>
-
     </>
-  )
-}
+  );
+};
 
-export default PokemonCard
+export default PokemonCard;

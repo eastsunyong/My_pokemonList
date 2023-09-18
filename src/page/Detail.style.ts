@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrap = styled.div`
   background-color: #f2f2f2;
   min-height: 100vh;
-  font-family: "Galmuri14";
+  font-family: 'Galmuri14';
   justify-content: center;
   display: flex;
 `;

@@ -47,5 +47,5 @@ export interface IPokemonFlavorText {
   version: {
     name: string;
     url: string;
-  }
+  };
 }

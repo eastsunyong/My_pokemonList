@@ -28,8 +28,8 @@
     "build": "CI= react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-		"format": "prettier --cache --write .",
-		"lint": "eslint --cache ."
+    "format": "prettier --cache --write .",
+    "lint": "eslint --cache ."
   },
   "eslintConfig": {
     "extends": [

@@ -1,5 +1,5 @@
-import Main from "./Main";
-import Detail from "./Detail";
-import Type from "./Type";
+import Main from './Main';
+import Detail from './Detail';
+import Type from './Type';
 
-export { Main, Detail, Type}
+export { Main, Detail, Type };

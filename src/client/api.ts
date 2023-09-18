@@ -1,10 +1,10 @@
-import client from "./client";
-import { IApi } from "interface";
+import client from './client';
+import { IApi } from 'interface';
 
 //메인화면 포켓몬 리스트 가져오는 api
 export const getPokemonList = async ({ pageParam = 0 }: IApi) => {
   return await client
-    .get("/pokemon", {
+    .get('/pokemon', {
       params: { limit: 32, offset: pageParam },
     })
     .then((res) => res.data);

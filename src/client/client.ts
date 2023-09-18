@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
 const BASE_URL = 'https://pokeapi.co/api/v2/';
 
 const client = axios.create({
-    baseURL: BASE_URL,
-})
+  baseURL: BASE_URL,
+});
 
 export default client;
