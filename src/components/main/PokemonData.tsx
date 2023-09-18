@@ -28,7 +28,6 @@ const PokemonData = ({ pokemonName }: IPokemonName) => {
         <LazyLoadImage
           loading='lazy'
           effect='blur'
-          placeholderSrc='/images/NaNImg.jpg'
           key={pokemonInfo?.id}
           src={
             pokemonInfo?.sprites?.versions?.["generation-v"]?.["black-white"]
