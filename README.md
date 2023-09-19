@@ -6,9 +6,12 @@
 ## <img  width="45" height="45" src='https://postfiles.pstatic.net/MjAyMzA4MDlfMjk2/MDAxNjkxNTg2OTE4NjIz.qd_fDcg3miAYE_FwqHMeTMyudsuYuT1nxqtHNWWuwo4g.dYlRlDVrqtwRjGspvBRTzckZAdtmTcjFBibTk9apI6Mg.PNG.nicholas9507/Pokebola-pokeball-png-0.png?type=w773'/> 나만의 포켓몬 리스트 <img  width="45" height="45" src='https://postfiles.pstatic.net/MjAyMzA4MDlfMjk2/MDAxNjkxNTg2OTE4NjIz.qd_fDcg3miAYE_FwqHMeTMyudsuYuT1nxqtHNWWuwo4g.dYlRlDVrqtwRjGspvBRTzckZAdtmTcjFBibTk9apI6Mg.PNG.nicholas9507/Pokebola-pokeball-png-0.png?type=w773'/>
 </div>
 
-## ⚙️ 설치 및 실행
+## ⚙️ 설치 및 배포 링크
 ### 이 프로젝트는 ***https://pokeapi.co/*** 를 활용한 프로젝트 입니다.
 자세한 API 내용은 링크를 통해 확인해 주시길 바랍니다.
+
+## 배포 링크
+#### https://sunyong-my-pokemonlist.netlify.app/
 
 #### 깃 레파지토리 클론
     git clone https://github.com/eastsunyong/My_pokemonList
