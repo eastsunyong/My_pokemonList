@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+<div align='center'>
+    <img width="500" height="300" src='https://pokemonkorea.co.kr/img/sub/img_compay_info.png'/>
+</div>
+<div align='center'>
+    
+## <img  width="45" height="45" src='https://postfiles.pstatic.net/MjAyMzA4MDlfMjk2/MDAxNjkxNTg2OTE4NjIz.qd_fDcg3miAYE_FwqHMeTMyudsuYuT1nxqtHNWWuwo4g.dYlRlDVrqtwRjGspvBRTzckZAdtmTcjFBibTk9apI6Mg.PNG.nicholas9507/Pokebola-pokeball-png-0.png?type=w773'/> 나만의 포켓몬 리스트 <img  width="45" height="45" src='https://postfiles.pstatic.net/MjAyMzA4MDlfMjk2/MDAxNjkxNTg2OTE4NjIz.qd_fDcg3miAYE_FwqHMeTMyudsuYuT1nxqtHNWWuwo4g.dYlRlDVrqtwRjGspvBRTzckZAdtmTcjFBibTk9apI6Mg.PNG.nicholas9507/Pokebola-pokeball-png-0.png?type=w773'/>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ⚙️ 설치 및 실행
+### 이 프로젝트는 ***https://pokeapi.co/*** 를 활용한 프로젝트 입니다.
+자세한 API 내용은 링크를 통해 확인해 주시길 바랍니다.
 
-## Available Scripts
+#### 깃 레파지토리 클론
+    git clone https://github.com/eastsunyong/My_pokemonList
+#### 설치 경로로 이동
+    cd My_pokemonList
+#### 설치
+    npm install
+#### 실행
+    npm start
 
-In the project directory, you can run:
 
-### `npm start`
+## 의존성
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" /> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/StyledComponents-DB7093?style=for-the-badge&logo=StyledComponents&logoColor=white" /> <img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=reactquery&logoColor=white"> <img src="https://img.shields.io/badge/reactrouter-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="https://img.shields.io/badge/Eslint-4B32C3?style=for-the-badge&logo=Eslint&logoColor=white" /> <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white" />
+<br />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# 📌 코드 컨벤션
 
-### `npm test`
+### git commit message 컨벤션
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| 커밋 유형 | 의미                                                         |
+| --------- | ------------------------------------------------------------ |
+| Feat      | 새로운 기능 추가                                             |
+| Fix       | 버그, 기능 수정                                              |
+| Docs      | 문서 수정                                                    |
+| Style     | 코드 formatting, 세미콜론 누락, 코드 자체의 변경이 없는 경우 |
+| Refactor  | 코드 리팩토링                                                |
+| Test      | 테스트 코드, 리팩토링 테스트 코드 추가                       |
+| Chore     | 패키지 매니저 수정, 그 외 기타 수정 ex) .gitignore           |
+| Design    | CSS 등 사용자 UI 디자인 변경                                 |
+| Comment   | 필요한 주석 추가 및 변경                                     |
+| Rename    | 파일 또는 폴더 명을 수정하거나 옮기는 작업만인 경우          |
+| Remove    | 파일을 삭제하는 작업만 수행한 경우                           |
+| !HOTFIX   | 급하게 치명적인 버그를 고쳐야 하는 경우                      |
+| ReadMe    | 리드미파일 추가, 수정, 삭제                                  |
 
-### `npm run build`
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎯 주요 기능
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ✅ react query useinfinitequery를 활용한 무한 스크롤 기능
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ✅ 영어, 한국어 2개 국어 지원
 
-### `npm run eject`
+### ✅ 포켓몬 각각의 세부 페이지
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### ✅ 포켓몬 타입별 모아보기 기능
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 주요 화면
+<div align='center'>
+    
+### 메인화면
+<img src='https://github.com/eastsunyong/My_pokemonList/assets/108984141/e3d29527-8b6d-4595-a7db-ddc3e65b6c18' />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 상세 화면
 
-## Learn More
+<img src='https://github.com/eastsunyong/My_pokemonList/assets/108984141/06542e82-febb-425d-9b8e-66aba3443097' />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 타입별 화면
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src='https://github.com/eastsunyong/My_pokemonList/assets/108984141/a3a372f1-eded-40e1-863e-3f4cdc069eea' />
+</div>
