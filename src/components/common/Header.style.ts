@@ -26,10 +26,10 @@ export const Box = styled.div<{$langColor : string}>`
   padding-right: 3rem;
   gap: 1.4rem;
   :nth-child(2) {
-    opacity: ${($props) => ($props.$langColor === 'en' ? 0.4 : null)};
+    color: ${($props) => ($props.$langColor === 'en' ? "gray" : "black")};
   }
   :last-child {
-    opacity: ${($props) => ($props.$langColor === 'ko' ? 0.4 : null)};
+    color: ${($props) => ($props.$langColor === 'en' ? "black" : "gray")};
   }
   p {
     cursor: pointer;
