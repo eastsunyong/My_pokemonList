@@ -18,13 +18,25 @@ const Header = (address: IPropsData) => {
     }
   };
 
+  const saveLanguage = (langType : string) => {
+    if(langType == "ko"){
+      localStorage.clear();
+      localStorage.setItem("언어", "ko")
+      setLanguage("ko")
+    } else{
+      localStorage.clear();
+      localStorage.setItem("언어", "en")
+      setLanguage("en")
+    }
+  }
+
   return (
     <S.Header>
       <S.Title onClick={Nav}>나만의 포켓몬 도감</S.Title>
       <S.Box langColor={language}>
         <LazyLoadImage src="/images/global.jpg" alt="글로벌" width={20} height={20} />
-        <p onClick={() => setLanguage('ko')}>한국어</p>
-        <p onClick={() => setLanguage('en')}>EN</p>
+        <p onClick={() => saveLanguage("ko")}>한국어</p>
+        <p onClick={() => saveLanguage("en")}>EN</p>
       </S.Box>
     </S.Header>
   );

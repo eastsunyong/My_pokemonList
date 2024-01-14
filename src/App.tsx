@@ -1,14 +1,22 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import Router from './router/Router';
 import { QueryClientProvider, QueryClient } from 'react-query';
 export const LanguageContext = createContext({
-  language: 'ko',
+  language: 'en',
   setLanguage: (language: string) => {},
 });
 
 const App = () => {
   const queryClient = new QueryClient();
   const [language, setLanguage] = useState<string>('ko');
+
+  useEffect(()=> {
+    if(localStorage.getItem("언어") === "ko"){
+      setLanguage("ko")
+    } else {
+      setLanguage("en")
+    }
+  }, [])
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageContext.Provider value={{ language, setLanguage }}>
