@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface ILangColor {
-  langColor: string;
-}
-
 export const Header = styled.header`
   display: flex;
   align-items: center;
@@ -23,17 +19,17 @@ export const Title = styled.h2`
   cursor: pointer;
 `;
 
-export const Box = styled.div<ILangColor>`
+export const Box = styled.div<{$langColor : string}>`
   font-size: 1.4rem;
   font-weight: 600;
   display: flex;
   padding-right: 3rem;
   gap: 1.4rem;
   :nth-child(2) {
-    opacity: ${(props) => (props.langColor === 'en' ? 0.4 : null)};
+    opacity: ${($props) => ($props.$langColor === 'en' ? 0.4 : null)};
   }
   :last-child {
-    opacity: ${(props) => (props.langColor === 'ko' ? 0.4 : null)};
+    opacity: ${($props) => ($props.$langColor === 'ko' ? 0.4 : null)};
   }
   p {
     cursor: pointer;
