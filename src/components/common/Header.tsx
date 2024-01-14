@@ -19,7 +19,7 @@ const Header = (address: IPropsData) => {
   };
 
   const saveLanguage = (langType : string) => {
-    if(langType == "ko"){
+    if(langType === "ko"){
       localStorage.clear();
       localStorage.setItem("언어", "ko")
       setLanguage("ko")
