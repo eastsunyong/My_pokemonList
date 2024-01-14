@@ -13,9 +13,6 @@ const PokemonData = ({ pokemonName }: IPokemonName) => {
 
   return (
     <S.Box
-      onClick={() => {
-        navigate(`/pokemon/${pokemonInfo?.id}`);
-      }}
     >
       <S.HeadBox>
         <LazyLoadImage
@@ -28,7 +25,9 @@ const PokemonData = ({ pokemonName }: IPokemonName) => {
       </S.HeadBox>
       <S.Span># {pokemonInfo?.id}</S.Span>
 
-      <S.BodyBox>
+      <S.BodyBox onClick={() => {
+        navigate(`/pokemon/${pokemonInfo?.id}`);
+      }}>
         <LazyLoadImage
           loading="lazy"
           effect="blur"
