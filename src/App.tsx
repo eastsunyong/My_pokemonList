@@ -7,7 +7,14 @@ export const LanguageContext = createContext({
 });
 
 const App = () => {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 60000 * 25,
+        cacheTime: 60000 * 30
+      }
+    }
+  });
   const [language, setLanguage] = useState<string>('ko');
 
   useEffect(()=> {
